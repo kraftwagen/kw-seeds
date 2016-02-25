@@ -1,0 +1,5 @@
+name = Kraftwagen Seeds
+description = Seeds the database
+package = Kraftwagen
+
+core = 7.x

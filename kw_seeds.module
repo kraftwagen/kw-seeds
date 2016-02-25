@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * Implements hook_hook_info().
+ */
+function kw_seeds_hook_info() {
+  $hooks = array();
+
+  $hooks['kw_seeds_info'] = array(
+    'group' => 'seeds'
+  );
+
+  return $hooks;
+}
+
+/**
+ * Load information about all available seeds.
+ */
+function kw_seeds_info() {
+  $seeds_info = &drupal_static(__FUNCTION__);
+
+  if (!isset($seeds_info)) {
+    $seeds_info = module_invoke_all(__FUNCTION__);
+  }
+
+  return $seeds_info;
+}
